@@ -1,0 +1,25 @@
+<%- include('../layouts/header') %>
+<div class="container cssdashboard" >
+    <div class="heading text-center">Welcome To Dashboard "<%= loginUser.fname %>"</div> 
+    <!-- <form method="post">   -->
+     <div class="row" style="margin-top: 20px;">
+        <div class=" col-md-4 form-group text-center">
+            <label>School</label>
+            <a href="/school/add" class="btn btn-danger btn-lg btn-block">Add</a>
+            <a href="/school/list" class="btn btn-danger btn-lg btn-block">List</a>
+        </div>
+        <div class="col-md-4 form-group text-center">
+            <label>Faculty</label>
+            <a href="/faculty/add" class="btn btn-success btn-lg btn-block">Add</a>
+            <a href="/faculty/list" class="btn btn-success btn-lg btn-block">List</a>
+        </div>
+        <div class="col-md-4 form-group text-center">
+            <label>Students</label>
+            <a href="/student/add" class="btn btn-primary btn-lg btn-block">Add</a>
+            <a href="/student/list" class="btn btn-primary btn-lg btn-block">List</a>
+        </div>             
+    </div>
+    <!-- </form> -->
+</div>
+
+<%- include('../layouts/footer') %>

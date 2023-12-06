@@ -1,0 +1,55 @@
+<%- include('../layouts/header') %>
+
+<div class="container cssCal" >
+    <div class="heading">Add Student Details</div>
+    <%  if(error.length) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>OMG! </strong> <%= error %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    <% } %>
+    <p class="text-right"> <a href=".." class="btn btn-dark">Back to Dashboard</a> </p>
+     <form method="post" action="/student/insert" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Faculty Name</label>
+            <select class="form-control" id="faculty_id" name="faculty_id">
+                <option value="" selected disabled>Select faculty</option>
+                <% faculty_names.map( data => { %>
+                    <option value="<%= data._id %>"><b><%= data.name %></b></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Gender</label><br>
+            <label><input type="radio" name="gender" value="male" checked> Male</label><br>
+            <label><input type="radio" name="gender" value="female"> Female</label><br>                
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" id="age" placeholder="0" name="age" required>
+        </div> 
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="text" class="form-control" id="contact" placeholder="Enter Contact" name="contact" required>
+        </div>   
+        <div class="form-group">
+            <label>Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>          
+        <div class="form-group">            
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Enter</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../layouts/footer') %>
